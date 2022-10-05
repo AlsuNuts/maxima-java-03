@@ -23,12 +23,8 @@ public class Birthday {
     public LocalDate nextBirthday(int year, int month, int date) {
         LocalDate myBirthday = LocalDate.of(year, month, date);
         int myAge = getAge(year, month, date);
-        int counter = 0;
-        while (myAge / 1000 > 0) {
+        int counter = (int)Math.ceil(myAge/1000);
 
-            counter += 1;
-            myAge -= 1000;
-        }
         return myBirthday.plus((counter+1) * 1000, ChronoUnit.DAYS);
     }
 
