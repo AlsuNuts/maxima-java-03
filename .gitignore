@@ -1,0 +1,5 @@
+*target
+*.[oa]
+*~
+*.idea/*
+*${project.build.directory}
