@@ -28,5 +28,5 @@ public class Birthday {
         return myBirthday.plus((counter+1) * 1000, ChronoUnit.DAYS);
     }
 
-} //counter = (counter++)*1000; myBirthday.plus((counter++) * 1000, ChronoUnit.DAYS)
+}
 
