@@ -8,13 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class App 
 {
     public static void main(String[] args) throws Exception{
-
-        try {
-            Cat cat = new Cat("Пушок", -100, false);
-        }
-        catch (IncorrectCatWeightException e){
-            System.out.println("Error, brain not found");
-        }
+        Cat cat = new Cat("Пушок", -100, false);
 
         //Birthday nuts = new Birthday();
         //System.out.println(nuts.getAge(1995, 10, 2));

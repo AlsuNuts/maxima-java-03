@@ -16,11 +16,13 @@ public class Cat {
 
 
     private boolean isAngry;
-    public Cat(String name, int weight, boolean isAngry) throws Exception {
+    public Cat(String name, int weight, boolean isAngry) throws IncorrectCatWeightException {
         this.name = name;
         setWeight(weight);
         this.isAngry = isAngry;
     }
+
+
 
 
     public String getName() {
@@ -39,7 +41,7 @@ public class Cat {
     public int getWeight() {
         return weight;
     }
-    public void setWeight(int weight) throws Exception{
+    public void setWeight(int weight) throws IncorrectCatWeightException{
         if (weight < 0){
             throw new IncorrectCatWeightException("Эксперт, закончивший биофак, заявляет, что вес кота не может быть отрицательным");
         }
