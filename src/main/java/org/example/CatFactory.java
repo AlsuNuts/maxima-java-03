@@ -1,21 +1,14 @@
 package org.example;
-/*
 
- В фабрике нет попытки создания кота и перехвата исключения.
- */
 public class CatFactory {
     public static Cat createCat(String name, int weight) throws IncorrectCatWeightException {
 
-        Cat cat  = null;
+        Cat cat;
 
-        try{ cat = new Cat("Пушок", -100, false);
-
+        try{ cat = new Cat(name, weight, false);
         }
-
-
         catch (IncorrectCatWeightException e){
             return new Cat(name, 5, true);
-
         }
         return cat;
     }
