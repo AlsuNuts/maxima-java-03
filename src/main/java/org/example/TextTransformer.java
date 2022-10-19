@@ -1,20 +1,13 @@
 package org.example;
 
 import java.io.*;
-import java.sql.SQLOutput;
 
 /*
-Дан csv-файл с разделителями «;», содержащий данные:
-
-Имя кота, вес кота, сердитость (true или false).
-
 Сформировать текстовый файл каждая строка которого будет соответствовать строке входного файла и иметь вид: <Сердитый (Дружелюбный)> кот <Имя> весом <n>кг.
 
 Для этого описать интерфейс Transformable с методом void transform(String fileIn, String fileOut). Параметрами задается имя входного и имя выходного файла.
 
-Описать класса, реализующий этот интерфейс:
-
-TextTransformer, при помощи классов FileReader / FileWriter
+Описать класс, реализующий этот интерфейс: TextTransformer, при помощи классов FileReader / FileWriter
  */
 public class TextTransformer implements Transformable{
     @Override
@@ -28,14 +21,7 @@ public class TextTransformer implements Transformable{
             writer.write(String.format("%s кот %s весом %s кг." + "\n", isAngry, arr[0], arr[1]));
 
         }
-
-
         writer.flush();
         writer.close();
-
-
     }
-
-
-
 }
