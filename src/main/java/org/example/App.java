@@ -9,21 +9,17 @@ import java.time.temporal.ChronoUnit;
 public class App 
 {
     public static void main(String[] args) throws IOException {
+        StreamTransformer transformer = new StreamTransformer();
+        transformer.transform("ListOfCats.csv", "ListOfCatsResult.csv");
+        FileInputStream stream = new FileInputStream("ListOfCatsResult.csv");
         StringBuilder result = new StringBuilder();
-        FileReader reader;
-        try {
-            reader = new FileReader("ListOfCats.csv");
-            int s;
-            do {
-                s = reader.read();
-                result.append((char) s);
-            }
-            while (s != -1);
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        System.out.println(result);
+        int r;
+        do{
+            r = stream.read();
+            result.append((char) r);
+        } while(r != -1);
+        System.out.println(result.toString());
+
 
     }
 }

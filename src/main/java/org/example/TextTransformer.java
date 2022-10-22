@@ -8,11 +8,13 @@ import java.io.*;
 Для этого описать интерфейс Transformable с методом void transform(String fileIn, String fileOut). Параметрами задается имя входного и имя выходного файла.
 
 Описать класс, реализующий этот интерфейс: TextTransformer, при помощи классов FileReader / FileWriter
+
  */
+
 public class TextTransformer implements Transformable{
     @Override
     public void transform(String fileIn, String fileOut) throws IOException {
-        FileWriter writer= new FileWriter("ListOfCats.csv", false);
+        FileWriter writer= new FileWriter(fileOut, false);
         BufferedReader reader = new BufferedReader(new FileReader(fileIn));
         String line;
         while ((line = reader.readLine()) != null){
