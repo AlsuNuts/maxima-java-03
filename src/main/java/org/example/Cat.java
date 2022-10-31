@@ -1,14 +1,4 @@
 package org.example;
-/*
-Описать геттеры и сеттеры всех свойств. Описать свой класс исключений — IncorrectCatWeightException и выбрасывать его
-при присваивании коту отрицательного веса.
-
-Описать фабрику котов CatFactory со статическим методом Cat createCat(String name, int weight).
-
-Этот метод будет пытаться создать кота, если вес указан корректный, то будет создан дружелюбный кот с указанным именем и весом.
-
-Если вес указан неверно, но будет создан сердитый кот весом 5 кг.
- */
 
 public class Cat {
     private String name;
@@ -47,6 +37,4 @@ public class Cat {
         }
         this.weight = weight;
     }
-
-    //String.valueOf(new Cat(name, 5, true))
 }
