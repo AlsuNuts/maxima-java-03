@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 public class App 
 {
     public static void main(String[] args) throws IOException {
-        TextTransformer transformer = new TextTransformer();
+        StreamTransformer transformer = new StreamTransformer();
         transformer.transform("ListOfCats.csv", "ListOfCatsResult.csv");
         FileInputStream stream = new FileInputStream("ListOfCatsResult.csv");
         StringBuilder result = new StringBuilder();
