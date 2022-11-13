@@ -18,16 +18,31 @@ public class StreamTransformer implements Transformable{
     @Override
     public void transform(String fileIn, String fileOut) throws IOException {
         FileInputStream fis = new FileInputStream(fileIn);
-        FileOutputStream fos = new FileOutputStream(fileOut, false);
         StringBuilder result = new StringBuilder();
 
         String doc = new String(fis.readAllBytes(), StandardCharsets.UTF_8);
-        String [] arr = doc.split(";"); // это вообще верно?
-        int line = fis.read();
-        do{
-            result.append((char) line);
-            result.toString().split(";");
-            fos.write(String.format("%s кот %s весом %s кг." + "\n",  arr[2].equals("true") ? "Сердитый" : "Дружелюбный", arr [0], arr [1]).getBytes(StandardCharsets.UTF_8));
-        }while (line != -1);
+        String [] parameters = doc.trim().split("\n"); // это вообще верно?
+        for(String cat:parameters){
+            parameters = cat.split(";");
+
+            result.append(String.format("%s кот %s весом %s кг." + "\n",  parameters[2].equals("true") ? "Сердитый" : "Дружелюбный", parameters [0], parameters [1]));
+        }
+        FileOutputStream fos = new FileOutputStream(fileOut, false);
+        fos.write(result.toString().getBytes(StandardCharsets.UTF_8));
+        fos.flush();
+        fos.close();
     }
+
+
+
+
 }
+/*
+    replace("\n", "").trim().split(";") //заменяем \n на ничего, убираем пробелы, раздеяем текст
+    ("%s кот %s весом %s кг." + "\n",  arr[2].equals("true") ? "Сердитый" : "Дружелюбный", arr [0], arr [1]).getBytes(StandardCharsets.UTF_8)
+     String isAngry = arr[2].equals("true") ? "Сердитый" : "Дружелюбный";
+
+     ебать ты говно, конечно
+     вся жизнь по пизде пошла
+     и где свернула не туда?
+ */
