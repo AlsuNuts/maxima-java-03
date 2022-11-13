@@ -8,8 +8,9 @@ void add ( экземпляр животного) — добавить живо�
 void feed() - покормить очередное животное (исключить его из очереди на кормление).
  */
 
-public interface AnimalKitchen {
-    public void add(String Animal);
+public interface AnimalKitchen <T> {
+
+    public void add(T animal);
     public void feed();
 
 }

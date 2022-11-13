@@ -1,10 +1,24 @@
 package org.example;
-/*
-Описать два класса QueueKitchen и StackKitchen, реализующие кормление животных по принципам FIFO и LIFO соответственно.
-
-Подсказка: В каждом классе должно быть определено свойство animals типа ArrayList
- */
 
 
-public class QueueKitchen {
+
+import java.util.ArrayList;
+
+public class QueueKitchen <T> implements  AnimalKitchen <T>{
+    ArrayList<T> animals = new ArrayList<>();
+    public ArrayList<T> getAnimals() {
+        return animals;
+    }
+    @Override
+    public void add(T animal) {
+        animals.add(animal);
+
+    }
+
+    @Override
+    public void feed() {
+
+        getAnimals().remove(0);
+
+    }
 }
