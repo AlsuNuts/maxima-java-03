@@ -24,7 +24,6 @@ public class StreamTransformer implements Transformable{
         String [] parameters = doc.trim().split("\n"); // это вообще верно?
         for(String cat:parameters){
             parameters = cat.split(";");
-
             result.append(String.format("%s кот %s весом %s кг." + "\n",  parameters[2].equals("true") ? "Сердитый" : "Дружелюбный", parameters [0], parameters [1]));
         }
         FileOutputStream fos = new FileOutputStream(fileOut, false);
@@ -42,7 +41,4 @@ public class StreamTransformer implements Transformable{
     ("%s кот %s весом %s кг." + "\n",  arr[2].equals("true") ? "Сердитый" : "Дружелюбный", arr [0], arr [1]).getBytes(StandardCharsets.UTF_8)
      String isAngry = arr[2].equals("true") ? "Сердитый" : "Дружелюбный";
 
-     ебать ты говно, конечно
-     вся жизнь по пизде пошла
-     и где свернула не туда?
  */
