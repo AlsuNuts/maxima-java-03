@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class App 
 {
     public static void main(String[] args) throws IOException, IncorrectCatWeightException {
+
+
         ArrayList<String> cats = new ArrayList<String>();
         cats.add(0, String.valueOf(new Cat("Мурзик", 10, false)));
         cats.add(0, String.valueOf(new Cat("Пушок", 8, true)));
@@ -51,7 +53,7 @@ public class App
         //try {Cat cat = CatFactory.createCat("Пушок", 10);}
         //catch (IncorrectCatWeightException e){}
 /*
-StreamTransformer transformer = new StreamTransformer();
+        StreamTransformer transformer = new StreamTransformer();
         transformer.transform("ListOfCats.csv", "ListOfCatsResult.csv");
         FileInputStream stream = new FileInputStream("ListOfCatsResult.csv");
         StringBuilder result = new StringBuilder();
@@ -61,4 +63,5 @@ StreamTransformer transformer = new StreamTransformer();
             result.append((char) r);
         } while(r != -1);
         System.out.println(result.toString());
+
  */

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class StackKitchen <T> implements AnimalKitchen <T>{
     ArrayList<T> animals = new ArrayList<>();
 
-
     public ArrayList<T> getAnimals() {
         return animals;
     }
@@ -18,7 +17,6 @@ public class StackKitchen <T> implements AnimalKitchen <T>{
     @Override
     public void feed() {
         getAnimals().remove(animals.size() -1);
-
     }
 }
 
