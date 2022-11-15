@@ -8,13 +8,9 @@ public class Cat  {
     private boolean isAngry;
     public Cat(String name, int weight, boolean isAngry) throws IncorrectCatWeightException {
         this.name = name;
-        setWeight(weight);
+        this.weight = weight;
         this.isAngry = isAngry;
     }
-
-
-
-
     public String getName() {
         return name;
     }

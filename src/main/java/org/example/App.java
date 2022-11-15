@@ -9,35 +9,31 @@ import java.util.ArrayList;
 
 public class App 
 {
-    public static void main(String[] args) throws IOException, IncorrectCatWeightException {
+    public static void main(String[] args) throws IncorrectCatWeightException {
+        Cat murzik = new Cat("Мурзик", 10, false);
+        Cat pushok = new Cat("Пушок", 8, true);
+        Cat kusya = new Cat ("Кусец", 5, false);
+        Cat barsik = new Cat("Барсик", 12, true);
+        Cat matroskin = new Cat("Матроскин", 9, false);
+
+        ArrayList<Cat> cats = new ArrayList<>();
+        cats.add(murzik);
+        cats.add(pushok);
+        cats.add(kusya);
+        cats.add(barsik);
+        cats.add(matroskin);
+
+        CatStatistics <Cat> catStatistics = new CatStatistics<>();
+        //catStatistics.sortByNameAscending(cats);
+        //catStatistics.sortByWeightDescending(cats);
+        //catStatistics.findFirstNonAngryCat(cats);
+        catStatistics.removeFirstAndLast(cats);
+        catStatistics.getCommonWeight(cats, false);
 
 
-        ArrayList<String> cats = new ArrayList<String>();
-        cats.add(0, String.valueOf(new Cat("Мурзик", 10, false)));
-        cats.add(0, String.valueOf(new Cat("Пушок", 8, true)));
-        cats.add(0, String.valueOf(new Cat("Кусец", 5, false)));
 
-        ArrayList<String> dogs = new ArrayList<String>();
-        dogs.add(0, String.valueOf(new Dog("Дружок", 20, false)));
-        dogs.add(0, String.valueOf(new Dog("Тузик", 23, true)));
-        dogs.add(0, String.valueOf(new Dog("Белка", 12, false)));
 
-        QueueKitchen fifo= new QueueKitchen();
-        for (String cat: cats){
-            fifo.add(cat);
 
-        }
-        System.out.println(fifo.getAnimals());
-        fifo.feed();
-        System.out.println(fifo.getAnimals());
-        StackKitchen lifo = new StackKitchen();
-        for (String cat: cats){
-            lifo.add(cat);
-
-        }
-        System.out.println(lifo.getAnimals());
-        lifo.feed();
-        System.out.println(lifo.getAnimals());
 
 
 
@@ -63,5 +59,24 @@ public class App
             result.append((char) r);
         } while(r != -1);
         System.out.println(result.toString());
+
+        ArrayList<String> dogs = new ArrayList<String>();
+        dogs.add(0, String.valueOf(new Dog("Дружок", 20, false)));
+        dogs.add(0, String.valueOf(new Dog("Тузик", 23, true)));
+        dogs.add(0, String.valueOf(new Dog("Белка", 12, false)));
+        QueueKitchen fifo= new QueueKitchen();
+        for (String cat: cats){
+            fifo.add(cat);
+        }
+        System.out.println(fifo.getAnimals());
+        fifo.feed();
+        System.out.println(fifo.getAnimals());
+        StackKitchen lifo = new StackKitchen();
+        for (String cat: cats){
+            lifo.add(cat);
+        }
+        System.out.println(lifo.getAnimals());
+        lifo.feed();
+        System.out.println(lifo.getAnimals());
 
  */
