@@ -15,6 +15,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class CatStatistics <T> {
@@ -40,17 +41,15 @@ public class CatStatistics <T> {
                 .limit(cats.size()-2)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
-    public static ArrayList<Cat> findFirstNonAngryCat (ArrayList<Cat> cats){
+    public static Cat findFirstNonAngryCat (ArrayList<Cat> cats){
         return cats.stream()
-                .filter((cat) -> !cat.isAngry())
-                .limit(1)
-                .collect(Collectors.toCollection(ArrayList::new));
+                .dropWhile(Cat::isAngry)
+                .findFirst().orElse(null);
     }
 
     public static  int getCommonWeight(ArrayList<Cat> cats, boolean onlyAngry){
-        return cats.stream()
-                .filter(cat -> !onlyAngry || cat.isAngry())
-                .map(Cat::getWeight)
+        Stream <Cat> finСats = onlyAngry ?  cats.stream().filter(Cat::isAngry) : cats.stream();
+        return finСats.map(Cat::getWeight)
                 .reduce(Integer::sum).orElse(0);
 
     }

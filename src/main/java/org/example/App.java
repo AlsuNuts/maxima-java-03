@@ -22,24 +22,17 @@ public class App
         cats.add(kusya);
         cats.add(barsik);
         cats.add(matroskin);
+        System.out.println(murzik);
+        System.out.println(pushok);
+        System.out.println(kusya);
 
         CatStatistics <Cat> catStatistics = new CatStatistics<>();
         //catStatistics.sortByNameAscending(cats);
         //catStatistics.sortByWeightDescending(cats);
-        //catStatistics.findFirstNonAngryCat(cats);
-        catStatistics.removeFirstAndLast(cats);
-        catStatistics.getCommonWeight(cats, false);
-
-
-
-
-
-
-
-
-
-
-
+        //System.out.println(catStatistics.findFirstNonAngryCat(cats));
+        System.out.println(catStatistics.getCommonWeight(cats, true));
+        //catStatistics.removeFirstAndLast(cats);
+        //catStatistics.getCommonWeight(cats, false);
     }
 }
         //Birthday nuts = new Birthday();
